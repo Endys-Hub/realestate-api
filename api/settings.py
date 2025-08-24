@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     # Apps
     'users.apps.UsersConfig',
     'listings.apps.ListingsConfig',
-    #'payments.apps.PaymentsConfig',
+    'payments.apps.PaymentsConfig',
     'rest_framework',
     'corsheaders',
     'rest_framework.authtoken',
