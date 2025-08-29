@@ -36,8 +36,8 @@ INSTALLED_APPS = [
     'listings.apps.ListingsConfig',
     'payments.apps.PaymentsConfig',
     'rest_framework',
-    'corsheaders',
     'rest_framework.authtoken',
+    'corsheaders',
     'drf_yasg',
     #'django_filters',
 ]

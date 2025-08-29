@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from listings.models import Listing
+#from django.contrib.auth.models import User
 
 class Payment(models.Model):
     STATUS_CHOICES = [
