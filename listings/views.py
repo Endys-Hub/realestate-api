@@ -58,24 +58,6 @@ class ListingListView(APIView):
         except Exception as e:
             return Response({"Error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-'''
-class ListingDetailView(APIView):
-    """
-    GET single listing by ID
-    """
-    def get(self, request, pk):
-        try:
-            listing = get_object_or_404(Listing, pk=pk)
-
-            if not request.user.is_staff and (not listing.is_published or not listing.is_available):
-                return Response({"detail": "Listing not available."}, status=status.HTTP_403_FORBIDDEN)
-
-            serializer = ListingSerializer(listing)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-
-        except Exception as e:
-            return Response({"Error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-'''
 class ListingDetailView(APIView):
     
     def get(self, request, pk):
@@ -178,16 +160,3 @@ class EnquiryView(APIView):
 
         except Exception as e:
             return Response({"Error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-
-'''
-GET /listings/ → List all published & available listings (staff sees all).
-
-GET /listings/<id>/ → Retrieve a specific listing.
-
-POST /listings/<id>/pay/ → Make payment for a listing (marks it unavailable).
-
-GET /enquiries/ → List all enquiries (staff only).
-
-POST /enquiries/ → Create a new enquiry (user must be authenticated).
-'''
